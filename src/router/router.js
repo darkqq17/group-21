@@ -2,6 +2,8 @@
 const Router = require('koa-router');
 // Our Controllers
 const DepartmentController = require('../controllers/DepartmentController');
+const UserController = require('../controllers/UserController');
+const CourseController = require('../controllers/CourseController');
 
 // const { a, b, c } = require() => a b c
 // const f = require() => f.a f.b f.c
@@ -16,14 +18,16 @@ router
     .get('/department/all', DepartmentController.readAllDepartment)
     .put('/department', DepartmentController.createDepartment)
 
-// CourseInfo
-router
-    .get('/course/all')
-    .put('/course')
-
 // UserInfo
 router
-    .get('/user/all')
-    .put('/user')
+    .get('/user/all', UserController.readAllUser)
+    .put('/user', UserController.createUser)
+
+// CourseInfo
+router
+    .get('/course/all', CourseController.readAllCourse)
+    .put('/course', CourseController.createCourse)
+
+
 
 module.exports = router;
