@@ -26,6 +26,10 @@ module.exports = function(sequelize, DataTypes) {
         key: 'department_id'
       }
     },
+    user_pwd: {
+      type: DataTypes.STRING(45),
+      allowNull: true
+    },
     user_salt: {
       type: DataTypes.STRING(45),
       allowNull: true
