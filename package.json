@@ -26,5 +26,8 @@
   },
   "devDependencies": {
     "sequelize-auto": "^0.5.1"
+  },
+  "engines": {
+    "node": "12.x"
   }
 }
