@@ -1,0 +1,12 @@
+{
+    "courseInfo":[
+        {
+            "rule": "Required",
+            "courses": [ "IMI001", "IM1023" ]
+        },
+        {
+            "rule": "HAS_SELECTED",
+            "courses": [ "IM1023", "IMI001" ]
+        }
+    ]
+}
