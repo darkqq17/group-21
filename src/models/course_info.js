@@ -1,7 +1,7 @@
 /* jshint indent: 2 */
 
 module.exports = function(sequelize, DataTypes) {
-  return sequelize.define('course_info', {
+  const CourseInfo = sequelize.define('course_info', {
     course_id: {
       type: DataTypes.STRING(45),
       allowNull: false,
@@ -27,6 +27,10 @@ module.exports = function(sequelize, DataTypes) {
       type: DataTypes.STRING(45),
       allowNull: true
     },
+    course_year:{
+      type: DataTypes.STRING(45),
+      allowNull: true
+    },
     course_time: {
       type: DataTypes.STRING(45),
       allowNull: true
@@ -47,4 +51,6 @@ module.exports = function(sequelize, DataTypes) {
     sequelize,
     tableName: 'course_info'
   });
+
+  return CourseInfo;
 };

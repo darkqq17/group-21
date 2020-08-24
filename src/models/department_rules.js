@@ -1,7 +1,7 @@
 /* jshint indent: 2 */
 
 module.exports = function(sequelize, DataTypes) {
-  return sequelize.define('department_rules', {
+  const DepartmentRules = sequelize.define('department_rules', {
     rule_id: {
       type: DataTypes.INTEGER(11),
       allowNull: false,
@@ -29,4 +29,6 @@ module.exports = function(sequelize, DataTypes) {
     sequelize,
     tableName: 'department_rules'
   });
+
+  return DepartmentRules;
 };

@@ -1,7 +1,7 @@
 /* jshint indent: 2 */
 
 module.exports = function(sequelize, DataTypes) {
-  return sequelize.define('selected_course', {
+  const SelectedCourse = sequelize.define('selected_course', {
     selection_id: {
       type: DataTypes.STRING(45),
       allowNull: false
@@ -38,4 +38,6 @@ module.exports = function(sequelize, DataTypes) {
     sequelize,
     tableName: 'selected_course'
   });
+
+  return SelectedCourse;
 };

@@ -1,6 +1,21 @@
 const Department = require("./common");
 
 async function createDepartment(ctx) {
+    Department.create({
+        department_id: ctx.request.body.department_id,
+        department_semester: ctx.request.body.department_semester,
+    })
+
+    ctx.body = createDepartment ? {
+        status: "success",
+        data: createDepartment
+    } : {
+            status: "fail",
+            data: null
+        }
+}
+
+/*async function createDepartment(ctx) {
     const { departmentName, departmentSemester } = ctx.request.body;
     if(departmentName && departmentSemester) {
         const createdDepartment = await Department.create({
@@ -22,7 +37,7 @@ async function createDepartment(ctx) {
         }
     }
     
-}
+}*/
 
 module.exports = {
     createDepartment

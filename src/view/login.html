@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+  <title>todo crud - add todo</title>
+</head>
+
+<body>
+
+
+  <form autocomplete="off" action="/api/user/login" method="get">
+    <input autocomplete="false" name="hidden" type="text" style="display:none;">
+    <fieldset>
+      <legend>登入</legend>
+
+      <div class="form-row">
+        <label for="user_id">
+          帳號: <input name="user_id" type="password" placeholder="輸入帳號..." id="user_id"
+            value="{{ user_info.user_id }}" />
+        </label>
+      </div>
+
+      <div class="form-row">
+        <label for="password">
+          密碼: <input name="user_password" type="text" placeholder="輸入密碼..." id="user_password"
+            value="{{ user_info.user_password }}" />
+        </label>
+      </div>
+
+
+
+
+      <button type="submit">login</button>
+    </fieldset>
+  </form>
+
+
+</body>
+
+</html>

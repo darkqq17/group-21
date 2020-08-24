@@ -1,7 +1,7 @@
 const Course = require("./common");
 
-async function createCourse(ctx) {
-    Course.create({
+async function updateCourse(ctx) {
+    Course.update({
         course_id: ctx.request.body.course_id,
         course_name: ctx.request.body.course_name,
         course_information: ctx.request.body.course_information,
@@ -11,18 +11,22 @@ async function createCourse(ctx) {
         course_time: ctx.request.body.course_time,
         course_classroom: ctx.request.body.course_classroom,
         course_limit: ctx.request.body.course_limit,
-        course_key: ctx.request.body.course_key,
-        course_year: ctx.request.body.course_year
+        course_key: ctx.request.body.course_key
+    }, {
+        where: {
+            course_id: ctx.request.body.course_id
+        }
     })
 
-    ctx.body = createCourse ? {
+    ctx.body = updateCourse ? {
         status: "success",
-        data: createCourse
+        data: updateCourse
     } : {
             status: "fail",
             data: null
         }
 }
-module.exports = { 
-    createCourse 
-};
+
+module.exports = {
+    updateCourse
+}
