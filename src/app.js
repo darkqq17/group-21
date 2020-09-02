@@ -5,7 +5,7 @@ const koaBody = require('koa-bodyparser');
 const apiRouter = require('./router/router');
 
 const app = new koa();
-const SERVER_PORT = 3010;
+const SERVER_PORT = 5000;
 
 // request -> node.js tcp socket(http) -> koa middlewares
 app.use(logger());
