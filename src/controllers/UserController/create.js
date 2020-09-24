@@ -44,8 +44,8 @@ async function loginpageUser(ctx) {
 
 async function loginUser(ctx){
     await User.findOne({
-       where:{ user_id:ctx.params.user_id,
-       user_password:ctx.params.user_password }
+       where:{ user_id:ctx.request.body.user_id,
+       user_password:ctx.request.body.user_password }
     }).then(task=>{
        ctx.render("index", { user_info: {} });
     }).catch(err=>{ctx.body='error:'+err})}

@@ -1,7 +1,7 @@
 const Course = require("./common");
 
 async function deleteCourse(ctx) {
- //if (course_id && course_name) {
+    //if (course_id && course_name) {
     await Course.destroy({
         where: {
             course_id: ctx.request.body.course_id,

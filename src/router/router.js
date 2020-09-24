@@ -33,13 +33,14 @@ router
   .put('/user/create', UserController.createUser)
   .put('/user/update', UserController.updateUser)
   .delete('/user/delete', UserController.deleteUser)
+  .get('/user/findall', UserController.findallUser)
 
   .get("/user/signuppage", UserController.signuppageUser)
   .post("/user/signup", UserController.signupUser)
 
   .get("/user/loginpage", UserController.loginpageUser)
-  .get("/user/login", UserController.loginUser)
-
+  .get("/login", UserController.loginUser)
+  
 //DepartmentRule
 router
   .get("/departmentrule/all", DepartmentruleController.readAllRule)
