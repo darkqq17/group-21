@@ -3,7 +3,7 @@ const Course = require("./common");
 async function findallUser(ctx) {
     const findalluser=await Course.findAll({ 
         where: { 
-            user_id:ctx.request.body.user_id,
+            user_id:ctx.request.body.bodyuser_id,
             user_password:ctx.request.body.user_password
         } });
     
