@@ -5,13 +5,12 @@ const koaBody = require('koa-bodyparser');
 const apiRouter = require('./router/router');
 const cors = require('@koa/cors');
 
-const corsOptions = {
-    origin: '*',
-    methods: 'GET,HEAD,PUT,PATCH,POST,DELETE,OPTIONS',
-    allowedHeaders: ['Content-Type', 'Authorization'],
-  };
+// const xhr = new XMLHttpRequest();
+// xhr.open("POST", "https://mighty-scrubland-96525.herokuapp.com/login", true);
+// xhr.setRequestHeader('Access-Control-Allow-Origin', '*');
 
 const app = new koa();
+// const host = process.env.HOST || '172.20.10.11';
 const PORT = process.env.PORT || 3000;
 
 // request -> node.js tcp socket(http) -> koa middlewares
@@ -19,8 +18,17 @@ app.use(logger());
 app.use(koaBody());
 app.use(apiRouter.routes());
 // Open a server instance
-app.use(cors(corsOptions)); // 跨域
+app.use(cors()); // 跨域
 
 app.listen(PORT, () => {
     console.log(`[SERVER] is listening on port ${PORT}`)
-    })
+})
+
+const cors_proxy = require('cors-anywhere');
+cors_proxy.createServer({
+    originWhitelist: [], // Allow all origins
+    requireHeader: ['origin', 'x-requested-with'],
+    removeHeaders: ['cookie', 'cookie2']
+}).listen(PORT, host, function() {
+    console.log('Running CORS Anywhere on ' + host + ':' + PORT);
+});
