@@ -1,9 +1,5 @@
 const { createUser } = require("./create");
 const { readAllUser } = require("./read");
-const { loginUser } = require("./create");
-const { loginpageUser } = require('./create');
-const { signupUser } = require('./create');
-const { signuppageUser } = require('./create');
 const { updateUser } = require('./update');
 const { deleteUser } = require('./delete');
 const { findallUser } = require('./findAll');
@@ -11,10 +7,6 @@ const { findallUser } = require('./findAll');
 module.exports = {
     createUser,
     readAllUser,
-    loginUser,
-    loginpageUser,
-    signupUser,
-    signuppageUser,
     updateUser,
     deleteUser,
     findallUser

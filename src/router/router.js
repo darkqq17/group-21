@@ -23,23 +23,19 @@ router
   .post('/course/create', CourseController.createCourse)
   .get('/course/read', CourseController.readAllCourse)
   .put('/course/update', CourseController.updateCourse)
-  .put('/course/delete', CourseController.deleteCourse)
+  .delete('/course/delete', CourseController.deleteCourse)
   .get('/course/findall', CourseController.findallCourse)
 
 
 // UserInfo
 router
-  .get('/user/all', UserController.readAllUser)
-  .put('/user/create', UserController.createUser)
+  
+  .get('/user/read', UserController.readAllUser)
+  .post('/register', UserController.createUser)
   .put('/user/update', UserController.updateUser)
   .delete('/user/delete', UserController.deleteUser)
-  .get('/user/findall', UserController.findallUser)
-
-  .get("/user/signuppage", UserController.signuppageUser)
-  .post("/user/signup", UserController.signupUser)
-
-  .get("/user/loginpage", UserController.loginpageUser)
-  .get("/login", UserController.loginUser)
+  .get('/login', UserController.findallUser)
+  
   
 //DepartmentRule
 router
